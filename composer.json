@@ -1,0 +1,24 @@
+{
+  "name": "ylly/dolist-v8",
+  "description": "Library for DoList V8",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Florian De groote",
+      "email": "fdg@ylly.fr"
+    }
+  ],
+  "require": {
+    "php": "^5.5 || ^7.0",
+    "ext-soap": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^4.0 || ^5.0 || ^6.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "YllyDoListV8\\": "src/"
+    }
+  }
+}
