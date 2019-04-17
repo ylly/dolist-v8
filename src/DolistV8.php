@@ -217,12 +217,11 @@ class DolistV8
     }
 
     /**
-     * @param Segment $segment
-     *
+     * @param int $segmentId
      * @return mixed
      * @throws SoapFault
      */
-    public function getSegmentById(Segment $segment)
+    public function getSegmentById($segmentId)
     {
         if ($this->token === null) {
             $this->connectDoListV8();
@@ -230,11 +229,7 @@ class DolistV8
 
         $options = array(
             'token' => $this->token,
-            'request' => array(
-                'Culture' => $segment->getCulture(),
-                'UserEmail' => $segment->getUserEmail(),
-                'SegmentID' => $segment->getSegmentId(),
-            )
+            'segmentID' => $segmentId,
         );
 
         return $this->send(self::WSDL_SEG, self::SOAP_SEG, 'GetSegmentById', $options);
