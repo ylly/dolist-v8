@@ -429,4 +429,24 @@ class DolistV8
 
         return $this->send(self::WSDL_CAM, self::SOAP_CAM, 'GetCampaigns', $options);
     }
+
+    /**
+     * @param string $ticket
+     *
+     * @return mixed
+     * @throws SoapFault
+     */
+    public function getStatusByTicket(string $ticket)
+    {
+        if ($this->token === null) {
+            $this->connectDoListV8();
+        }
+
+        $options = array(
+            'token' => $this->token,
+            'ticket' => $ticket,
+        );
+
+        return $this->send(self::WSDL_CONTACT, self::SOAP_CONTACT, 'GetStatusByTicket', $options);
+    }
 }
