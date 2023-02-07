@@ -4,7 +4,7 @@ This library allows you to easily implement Dolist V8 in your project
 
 ## Require :
 
-- PHP 5.3+
+- PHP 5.5+
 - PHP SOAP 1.1
 
 ## Intallation : 
